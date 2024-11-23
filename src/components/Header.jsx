@@ -5,7 +5,7 @@ export const Header = () => {
 
   return (
     <div className="relative">
-      <div className="flex flex-row justify-between items-center border-2 border-violet-300 h-32 px-8 md:px-32 py-8">
+      <div className="flex flex-row justify-between items-center  h-32 px-8 md:px-32 py-8">
         <div className="border-2 border-violet-300">Logo</div>
         <button
           className="block md:hidden"
