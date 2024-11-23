@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Card = ({ title, description, imageUrl }) => {
   return (
-    <div className='border p-4 rounded-lg shadow-md '>
+    <div className='border w-96 p-4 rounded-lg shadow-md '>
       <img 
         src={imageUrl} 
         alt={title} 
