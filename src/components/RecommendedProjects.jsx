@@ -7,8 +7,6 @@ export const RecommendedProjects = () => {
   const [scrollIndex, setScrollIndex] = useState(0);
   const [cardsPerRow, setCardsPerRow] = useState(3); // Default for large screens
   const totalItems = projects.length;
-
-  // Update the number of visible cards based on screen size
   const getCardsPerRow = () => {
     if (window.innerWidth < 640) return 1; // 1 card on small screens
     if (window.innerWidth < 1024) return 2; // 2 cards on medium screens

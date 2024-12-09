@@ -7,7 +7,7 @@ export const AboutUs = () => {
     <div className='flex flex-col lg:flex-row px-4 lg:px-32 '>
         <div className="lg:w-1/2 relative">
           <img
-            src=""
+            src={null}
             alt="1920x1080"
             className="object-cover"
           />

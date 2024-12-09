@@ -1,24 +1,14 @@
-import { useState } from 'react'
-import { Footer } from './components/Footer'
-import { Header } from './components/Header'
-import { Banner } from './components/Banner'
-import { RecommendedProjects } from './components/RecommendedProjects'
-import { SearchBar } from './components/SearchBar'
-import { AboutUs } from './components/AboutUs'
-import { Testimonial } from './components/Testimonial'
+import { Route, BrowserRouter, Routes } from 'react-router-dom'
+import { Contact } from './pages/Contact'
+import { Home } from './pages/Home'
 function App() {
   return (
-    <>
-      <div className='bg-violet-100 relative'>
-        <Header/>
-        <Banner/>
-        <SearchBar/>
-        <RecommendedProjects/>
-        <AboutUs/>
-        <Testimonial/>
-        <Footer/>
-      </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
