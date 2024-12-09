@@ -1,43 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card } from './Card';
 import { projects } from '../data/projects';
 import '../assets/styles/scrollbar.css';
 
 export const RecommendedProjects = () => {
   const [scrollIndex, setScrollIndex] = useState(0);
-  const [scrollbarWidth, setScrollbarWidth] = useState(0);
-  const cardWidth = 384;
-  
-  // Calculate the visible items based on the container width
-  const getVisibleItems = () => {
-    const containerWidth = window.innerWidth; // Screen width (or use container width)
-    const visibleItems = Math.floor(containerWidth / cardWidth); // Number of visible items
-    return visibleItems;
+  const [cardsPerRow, setCardsPerRow] = useState(3); // Default for large screens
+  const totalItems = projects.length;
+
+  // Update the number of visible cards based on screen size
+  const getCardsPerRow = () => {
+    if (window.innerWidth < 640) return 1; // 1 card on small screens
+    if (window.innerWidth < 1024) return 2; // 2 cards on medium screens
+    return 3; // 3 cards on large screens
   };
 
-  const visibleItems = getVisibleItems(); // Number of visible items at any given time
-  const totalItems = projects.length; // Total number of projects
-
-  // Dynamically calculate scrollbar width
   useEffect(() => {
-    const updateScrollbarWidth = () => {
-      const scrollbarWidth = (visibleItems / totalItems) * 100; // Dynamic scrollbar width
-      setScrollbarWidth(scrollbarWidth);
+    const handleResize = () => {
+      setCardsPerRow(getCardsPerRow());
     };
-
-    updateScrollbarWidth(); // Initial calculation
-
-    // Recalculate scrollbar width on window resize
-    window.addEventListener('resize', updateScrollbarWidth);
-
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
     return () => {
-      window.removeEventListener('resize', updateScrollbarWidth);
+      window.removeEventListener('resize', handleResize);
     };
-  }, [visibleItems, totalItems]);
+  }, []);
 
-  // Handle scrolling to next and previous cards
   const handleNext = () => {
-    if (scrollIndex < totalItems - visibleItems) {
+    if (scrollIndex < totalItems - cardsPerRow) {
       setScrollIndex(scrollIndex + 1);
     }
   };
@@ -78,83 +68,71 @@ export const RecommendedProjects = () => {
           </div>
         </div>
 
-        <div className="overflow-x-auto custom-scrollbar">
-          <div
-            className="flex space-x-4"
-            style={{
-              transform: `translateX(-${scrollIndex * (cardWidth)}px)`,
-              transition: 'transform 0.5s ease',
-            }}
-          >
-            {projects.map((project) => (
-              <div key={project.id} className="flex-shrink-0">
-                <Card
-                  title={project.title}
-                  description={project.description}
-                  imageUrl={project.imageUrl}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="flex justify-between items-center">
-          <div className="custom-scrollbar w-full h-1 mx-4 mt-2 bg-gray-200 relative">
-            <div
-              className="absolute top-0 left-0 h-full bg-violet-400"
-              style={{
-                width: `${100-scrollbarWidth}%`, // Set width of the background bar
-                transform: `translateX(${(scrollIndex / (totalItems - visibleItems)) * 100}%)`, // This will slide the violet progress bar
-                transition: 'transform 0.5s ease',
-              }}
-            />
-          </div>
-
-          <div className="flex space-x-2">
+        <div className="relative overflow-x-auto custom-scrollbar">
+            {/* Left Button */}
             <button
               onClick={handlePrev}
-              className="bg-gray-200 text-white p-4 rounded-xl hover:bg-violet-400 group"
+              className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-transparent p-2 text-violet-200 hover:text-violet-500 focus:outline-none z-10 border-2 border-violet-200 rounded-full hover:border-violet-300 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
             >
               <svg
-                width="10"
-                height="16"
-                viewBox="0 0 10 16"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M8 2L2 8L8 14"
-                  stroke="#020617"
-                  strokeWidth="2.2"
+                  d="M15 18L9 12L15 6"
+                  stroke="currentColor"
+                  strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="group-hover:stroke-white"
                 />
               </svg>
             </button>
 
+            {/* Carousel Content */}
+            <div
+              className="flex space-x-4"
+              style={{
+                transform: `translateX(-${scrollIndex * (100 / cardsPerRow)}%)`,
+                transition: 'transform 0.5s ease',
+              }}
+            >
+              {projects.map((project) => (
+                <div key={project.id} className="flex-shrink-0" style={{
+                  width: `calc(${100 / cardsPerRow}% - 16px)`,
+                }}>
+                  <Card
+                    title={project.title}
+                    description={project.description}
+                    imageUrl={project.imageUrl}
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Right Button */}
             <button
               onClick={handleNext}
-              className="bg-gray-200 text-white p-4 rounded-xl hover:bg-violet-400 group"
+               className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-transparent p-2 text-violet-200 hover:text-violet-500 focus:outline-none z-10 border-2 border-violet-200 rounded-full hover:border-violet-300 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
             >
               <svg
-                width="10"
-                height="16"
-                viewBox="0 0 10 16"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M2 14L8 8L2 2"
-                  stroke="#020617"
-                  strokeWidth="2.2"
+                  d="M9 18L15 12L9 6"
+                  stroke="currentColor"
+                  strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="group-hover:stroke-white"
                 />
               </svg>
             </button>
-          </div>
         </div>
       </div>
     </div>
