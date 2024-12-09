@@ -54,7 +54,7 @@ export const Footer = () => {
         </div>
      </div>
       <div className='flex justify-center pt-2 border-t-2'>
-        <div className='text-sm'>@ 2021 UrbanestInfra. All rights reserved.</div>
+        <div className='text-sm'>@ 2024 UrbanestInfra. All rights reserved.</div>
       </div>
     </div>
   )
