@@ -60,7 +60,7 @@ export const Testimonial = () => {
             They vote on the property services we provide
           </div>
         </div>
-      <div className="relative overflow-x-auto custom-scrollbar">
+      <div className="relative">
             {/* Left Button */}
             <button
               onClick={handlePrev}
@@ -84,27 +84,29 @@ export const Testimonial = () => {
             </button>
 
             {/* Carousel Content */}
-            <div
-              className="flex space-x-4"
-              style={{
-                transform: `translateX(-${scrollIndex * (100 / cardsPerRow)}%)`,
-                transition: 'transform 0.5s ease',
-              }}
-            >
-              {reviews.map((review) => (
-                <div key={review.id} className="flex-shrink-0" style={{
-                  width: `calc(${100 / cardsPerRow}% - 16px)`,
-                }}>
-                 <TestimonialCard
-                  key={review.id}
-                  name={review.name}
-                  company={review.company}
-                  description={review.description}
-                  imageUrl={review.imageUrl}
-                  rating={review.rating}
-                />
-                </div>
-              ))}
+            <div className='overflow-x-auto custom-scrollbar'>
+              <div
+                className="flex space-x-4"
+                style={{
+                  transform: `translateX(-${scrollIndex * (100 / cardsPerRow)}%)`,
+                  transition: 'transform 0.5s ease',
+                }}
+              >
+                {reviews.map((review) => (
+                  <div key={review.id} className="flex-shrink-0" style={{
+                    width: `calc(${100 / cardsPerRow}% - 16px)`,
+                  }}>
+                  <TestimonialCard
+                    key={review.id}
+                    name={review.name}
+                    company={review.company}
+                    description={review.description}
+                    imageUrl={review.imageUrl}
+                    rating={review.rating}
+                  />
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Right Button */}

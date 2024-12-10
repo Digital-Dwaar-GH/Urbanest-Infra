@@ -66,41 +66,46 @@ export const RecommendedProjects = () => {
           </div>
         </div>
 
-        <div className="relative overflow-x-auto custom-scrollbar">
-            {/* Left Button */}
-            <button
-              onClick={handlePrev}
-              className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-transparent p-2 text-violet-200 hover:text-violet-500 focus:outline-none z-10 border-2 border-violet-200 rounded-full hover:border-violet-300 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
+        <div className="relative">
+          {/* Left Button */}
+          <button
+            onClick={handlePrev}
+            className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-transparent p-2 text-violet-200 hover:text-violet-500 focus:outline-none z-10 border-2 border-violet-200 rounded-full hover:border-violet-300 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M15 18L9 12L15 6"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
+              <path
+                d="M15 18L9 12L15 6"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
 
-            {/* Carousel Content */}
+          {/* Carousel Content */}
+          <div className="overflow-x-auto relative custom-scrollbar">
             <div
               className="flex space-x-4"
               style={{
                 transform: `translateX(-${scrollIndex * (100 / cardsPerRow)}%)`,
-                transition: 'transform 0.5s ease',
+                transition: "transform 0.5s ease",
               }}
             >
               {projects.map((project) => (
-                <div key={project.id} className="flex-shrink-0" style={{
-                  width: `calc(${100 / cardsPerRow}% - 16px)`,
-                }}>
+                <div
+                  key={project.id}
+                  className="flex-shrink-0"
+                  style={{
+                    width: `calc(${100 / cardsPerRow}% - 16px)`,
+                  }}
+                >
                   <Card
                     title={project.title}
                     description={project.description}
@@ -109,28 +114,29 @@ export const RecommendedProjects = () => {
                 </div>
               ))}
             </div>
+          </div>
 
-            {/* Right Button */}
-            <button
-              onClick={handleNext}
-               className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-transparent p-2 text-violet-200 hover:text-violet-500 focus:outline-none z-10 border-2 border-violet-200 rounded-full hover:border-violet-300 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
+          {/* Right Button */}
+          <button
+            onClick={handleNext}
+            className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-transparent p-2 text-violet-200 hover:text-violet-500 focus:outline-none z-10 border-2 border-violet-200 rounded-full hover:border-violet-300 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9 18L15 12L9 6"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
+              <path
+                d="M9 18L15 12L9 6"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
