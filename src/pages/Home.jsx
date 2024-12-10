@@ -7,10 +7,12 @@ import { SearchBar } from '../components/SearchBar'
 import { AboutUs } from '../components/AboutUs'
 import { Testimonial } from '../components/Testimonial'
 import bannerImage from '../assets/Images/banner1.jpg'
+import { TopBanner } from '../components/TopBanner'
 export const Home = () => {
   return (
     <>
         <div className='bg-violet-100 relative'>
+            <TopBanner/>
             <div className=' bg-cover bg-center' style={{ backgroundImage: `url(${bannerImage})` }}>
               <Header/>
               <Banner/>
