@@ -1,8 +1,66 @@
 import React, { useState } from 'react';
 import SearchIcon from '../assets/Images/MagnifyingGlass.png';
 
+const CustomDropdown = ({ label, options, selected, onChange }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => setIsOpen((prev) => !prev);
+
+  const handleOptionClick = (value) => {
+    onChange(value);
+    setIsOpen(false);
+  };
+
+  return (
+    <div
+      className="relative px-4 py-2 rounded-md cursor-pointer"
+      onClick={toggleDropdown}
+    >
+        <div className="flex justify-between items-center">
+          <div className='flex-col'>
+            <div className="text-gray-700 font-medium mb-1">{label}</div>
+            <span>{options.find((opt) => opt.value === selected)?.label || "Select"}</span>
+          </div>
+          <span
+            className={`transform transition-transform ${
+              isOpen ? "rotate-180" : "rotate-0"
+            }`}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="gray"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </span>
+        </div>
+      {isOpen && (
+        <div className="absolute top-full left-0 mt-2 bg-white border shadow-lg rounded-md z-10 w-full">
+          {options.map((option) => (
+            <div
+              key={option.value}
+              className={`px-4 py-2 hover:bg-gray-100 cursor-pointer ${
+                option.value === selected ? "font-bold" : ""
+              }`}
+              onClick={() => handleOptionClick(option.value)}
+            >
+              {option.label}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 export const SearchBar = () => {
-  const [searchQuery, setSearchQuery] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('');
   const [selectedType, setSelectedType] = useState('');
   const [selectedPrice, setSelectedPrice] = useState('');
@@ -12,99 +70,59 @@ export const SearchBar = () => {
     triggerSearch(event.target.value, selectedLocation, selectedType, selectedPrice);
   };
 
-  const handleLocationChange = (e) => {
-    const value = e.target.value;
-    setSelectedLocation(value);
-    triggerSearch(searchQuery, value, selectedType, selectedPrice);
-  };
-
-  const handleTypeChange = (e) => {
-    const value = e.target.value;
-    setSelectedType(value);
-    triggerSearch(searchQuery, selectedLocation, value, selectedPrice);
-  };
-
-  const handlePriceChange = (e) => {
-    const value = e.target.value;
-    setSelectedPrice(value);
-    triggerSearch(searchQuery, selectedLocation, selectedType, value);
-  };
-
-  const triggerSearch = (query, location, type, price) => {
-    const filters = { query, location, type, price };
-    console.log('Filters applied:', filters);
+  const triggerSearch = () => {
+    const filters = { selectedLocation, selectedType, selectedPrice };
+    console.log("Filters applied:", filters);
     // Replace with your search/filter logic
   };
 
   return (
     <div className="absolute flex justify-center items-center w-full md:top-[30.5%] transform -translate-y-1/2 z-10">
-      <div className="bg-white p-4 shadow-lg rounded-md w-full sm:w-72 md:w-96 flex flex-col space-y-4">
-        <div className="flex space-x-4 items-center">
+      <div className="bg-white p-4 shadow-lg rounded-md w-full sm:w-[550px] md:w-[675px] flex flex-col space-y-4">
+        <div className="flex flex-col space-y-4 md:flex-row md:space-x-4 items-center">
           <div className="w-full">
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={handleSearchChange}
-              className="w-full px-4 py-2 border rounded-md"
-              placeholder="Search..."
-            />
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <CustomDropdown
+                  label="Location"
+                  selected={selectedLocation}
+                  onChange={setSelectedLocation}
+                  options={[
+                    { label: "All Locations", value: "" },
+                    { label: "New York", value: "new-york" },
+                    { label: "Los Angeles", value: "los-angeles" },
+                    { label: "San Francisco", value: "san-francisco" },
+                ]}
+              />
+              <CustomDropdown
+                label="Type"
+                selected={selectedType}
+                onChange={setSelectedType}
+                options={[
+                  { label: "All Types", value: "" },
+                  { label: "Apartment", value: "apartment" },
+                  { label: "House", value: "house" },
+                  { label: "Studio", value: "studio" },
+                ]}
+              />
+              <CustomDropdown
+                label="Price"
+                selected={selectedPrice}
+                onChange={setSelectedPrice}
+                options={[
+                  { label: "Any Price", value: "" },
+                  { label: "$0 - $1,000", value: "0-1000" },
+                  { label: "$1,000 - $2,000", value: "1000-2000" },
+                  { label: "$2,000 - $3,000", value: "2000-3000" },
+                ]}
+              />
+            </div>
           </div>
           <button
-            className="bg-violet-500 rounded-md p-2 cursor-pointer w-12 h-10 flex justify-center items-center"
+            className="bg-violet-500 rounded-md p-2 cursor-pointer w-full md:w-14 md:h-14 flex justify-center items-center"
             onClick={() => triggerSearch(searchQuery, selectedLocation, selectedType, selectedPrice)}
           >
-            <img src={SearchIcon} alt="Search" />
+            <img src={SearchIcon} alt="Search" className=' w-8 h-8 md:w-10 md:h-8' />
           </button>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div>
-            <label htmlFor="location" className="block text-gray-700 font-medium mb-1">
-              Location
-            </label>
-            <select
-              id="location"
-              value={selectedLocation}
-              onChange={handleLocationChange}
-              className="w-full px-4 py-2 border rounded-md"
-            >
-              <option value="">All Locations</option>
-              <option value="new-york">New York</option>
-              <option value="los-angeles">Los Angeles</option>
-              <option value="san-francisco">San Francisco</option>
-            </select>
-          </div>
-          <div>
-            <label htmlFor="type" className="block text-gray-700 font-medium mb-1">
-              Type
-            </label>
-            <select
-              id="type"
-              value={selectedType}
-              onChange={handleTypeChange}
-              className="w-full px-4 py-2 border rounded-md"
-            >
-              <option value="">All Types</option>
-              <option value="apartment">Apartment</option>
-              <option value="house">House</option>
-              <option value="studio">Studio</option>
-            </select>
-          </div>
-          <div>
-            <label htmlFor="price" className="block text-gray-700 font-medium mb-1">
-              Price Range
-            </label>
-            <select
-              id="price"
-              value={selectedPrice}
-              onChange={handlePriceChange}
-              className="w-full px-4 py-2 border rounded-md"
-            >
-              <option value="">Any Price</option>
-              <option value="0-1000">$0 - $1,000</option>
-              <option value="1000-2000">$1,000 - $2,000</option>
-              <option value="2000-3000">$2,000 - $3,000</option>
-            </select>
-          </div>
         </div>
       </div>
     </div>

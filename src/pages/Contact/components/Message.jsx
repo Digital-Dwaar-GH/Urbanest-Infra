@@ -1,4 +1,8 @@
 import React from 'react';
+import ScheduleIcon from '../../../assets/svg/schedule';
+import PhoneIcon from '../../../assets/svg/phoneCall';
+import Mail from '../../../assets/svg/email';
+import LocationIcon from '../../../assets/svg/location';
 
 export const Message = () => {
   return (
@@ -86,17 +90,17 @@ export const Message = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="flex items-start">
-                <span className="material-icons text-blue-600 mr-4">location_on</span>
-                <div>
-                <h3 className="font-semibold text-gray-800">ADDRESS</h3>
-                <p className="text-gray-600">
-                    Jl. Cempaka Wangi No 22<br />Jakarta - Indonesia
-                </p>
+                <div className="flex items-center space-x-2">
+                    <LocationIcon fill="gray" className='w-10 h-10' />
+                    <div>
+                        <h3 className="font-semibold text-gray-800">ADDRESS</h3>
+                        <p className="text-gray-600">
+                            Jl. Cempaka Wangi No 22<br />Jakarta - Indonesia
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div className="flex items-start">
-                <span className="material-icons text-blue-600 mr-4">email</span>
+            <div className="flex items-center space-x-2">
+                <Mail fill="gray" className='w-10 h-10' />
                 <div>
                 <h3 className="font-semibold text-gray-800">EMAIL SUPPORT</h3>
                 <p className="text-gray-600">
@@ -104,8 +108,8 @@ export const Message = () => {
                 </p>
                 </div>
             </div>
-            <div className="flex items-start">
-                <span className="material-icons text-blue-600 mr-4">phone</span>
+            <div className="flex items-center space-x-2">
+                <PhoneIcon fill="gray" className='w-10 h-10' />
                 <div>
                 <h3 className="font-semibold text-gray-800">PHONE</h3>
                 <p className="text-gray-600">
@@ -113,13 +117,13 @@ export const Message = () => {
                 </p>
                 </div>
             </div>
-            <div className="flex items-start">
-                <span className="material-icons text-blue-600 mr-4">schedule</span>
+            <div className="flex items-center space-x-2">
+                 <ScheduleIcon fill="gray"  className='w-10 h-10' />
                 <div>
-                <h3 className="font-semibold text-gray-800">OFFICE HOURS</h3>
-                <p className="text-gray-600">
-                    Mon-Fri: 09am-07pm<br />Sat-Sun: Closed
-                </p>
+                    <h3 className="font-semibold text-gray-800">OFFICE HOURS</h3>
+                    <p className="text-gray-600">
+                        Mon-Fri: 09am-07pm<br />Sat-Sun: Closed
+                    </p>
                 </div>
             </div>
             </div>

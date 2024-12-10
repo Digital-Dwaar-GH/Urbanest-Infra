@@ -6,13 +6,15 @@ import { RecommendedProjects } from '../components/RecommendedProjects'
 import { SearchBar } from '../components/SearchBar'
 import { AboutUs } from '../components/AboutUs'
 import { Testimonial } from '../components/Testimonial'
-
+import bannerImage from '../assets/Images/banner1.jpg'
 export const Home = () => {
   return (
     <>
         <div className='bg-violet-100 relative'>
-            <Header/>
-            <Banner/>
+            <div className=' bg-cover bg-center' style={{ backgroundImage: `url(${bannerImage})` }}>
+              <Header/>
+              <Banner/>
+            </div>
             <SearchBar/>
             <RecommendedProjects/>
             <AboutUs/>

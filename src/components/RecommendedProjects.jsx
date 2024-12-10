@@ -46,7 +46,7 @@ export const RecommendedProjects = () => {
             viewBox="0 0 36 36"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute top-28 left-2 lg:left-28"
+            className="absolute top-56 sm:top-48 md:top-28 left-2 lg:left-28"
           >
             <path
               d="M2 34V2H34"

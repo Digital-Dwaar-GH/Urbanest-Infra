@@ -1,26 +1,27 @@
 import React from 'react'
 import deal from '../assets/Images/about-deal.jpg'
 import { projects } from '../data/projects';
+import AboutImg from '../assets/Images/aboutUs.jpg'
 export const AboutUs = () => {
   const totalItems = projects.length;
   return (
     <div className='flex flex-col lg:flex-row px-4 lg:px-32 '>
         <div className="lg:w-1/2 relative">
           <img
-            src={null}
+            src={AboutImg}
             alt="1920x1080"
-            className="object-cover"
+            className="object-cover h-full"
           />
           <div
-            className="absolute top-[55%] right-0 transform -translate-y-1/2 w-24 h-24 bg-violet-300 rounded-full border-8 border-white flex items-center justify-center z-10 "
+            className="absolute top-[75%] lg:top-[55%] right-0 transform -translate-y-1/2 w-12 h-12 md:w-24 md:h-24 bg-violet-300 rounded-full border-8 border-white flex items-center justify-center z-10 "
           >
             <div className='flex-col text-center'>
-              <p className='text-3xl font-bold text-violet-500'>{totalItems}+</p>
-              <p className='text-[10px]'>completed project</p>
+              <p className=' text-md md:text-3xl font-bold text-violet-500'>{totalItems}+</p>
+              <p className='hidden md:block text-[10px]'>completed project</p>
             </div>
           </div>
           <div
-            className="absolute bottom-0 right-0 w-36 h-36 rounded-full border-8 border-white overflow-clip"
+            className="absolute bottom-0 right-0 w-24 h-24 md:w-36 md:h-36 rounded-full border-8 border-white overflow-clip"
           >
               <img src={deal} className="w-full h-full object-cover" alt="deal" />
           </div>

@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import FacebookIcon from '../assets/svg/facebook.jsx';
+import Mail from '../assets/svg/email.jsx';
+import InstagramIcon from '../assets/svg/instagram.jsx';
+import LinkedInIcon from '../assets/svg/linkedin.jsx';
+import LocationIcon from '../assets/svg/location.jsx';
+import TwitterIcon from '../assets/svg/twitter.jsx';
+import Logo from '../assets/Images/Logo UI white.png'
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,32 +16,34 @@ export const Header = () => {
     <div className="relative">
       <div className=' justify-between h-12 px-8 md:px-16 py-2 hidden md:flex '>
         <div className="flex items-center space-x-4">
-          <a href="https://www.yourwebsite.com" className="flex items-center space-x-2">
-            <img src="/logo.png" alt="Logo" />
+          <Link to="https://www.yourwebsite.com" className="flex items-center space-x-2">
+            <Mail fill="white" className="h-6 w-6" /> 
             <span className="text-md font-bold">mail</span>
-          </a>
-          <a href="https://www.yourwebsite.com" className="flex items-center space-x-2">
-            <img src="/logo.png" alt="Logo"/>
+          </Link>
+          <Link to="https://www.yourwebsite.com" className="flex items-center space-x-2">
+            <LocationIcon fill="white" className="h-6 w-6" /> 
             <span className="text-md font-bold">Location</span>
-          </a>
+          </Link>
         </div>
         <div className="flex items-center space-x-6">
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-            <img src="/facebook-logo.png" alt="Facebook" className="h-6" />
-          </a>
-          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-            <img src="/twitter-logo.png" alt="Twitter" className="h-6" />
-          </a>
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-            <img src="/linkedin-logo.png" alt="LinkedIn" className="h-6" />
-          </a>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-            <img src="/instagram-logo.png" alt="Instagram" className="h-6" />
-          </a>
+          <Link to="https://www.facebook.com" target="_blank">
+            <FacebookIcon fill="white" className="h-6 w-6" />
+          </Link>
+          <Link to="https://www.facebook.com" target="_blank">
+            <InstagramIcon fill="white" className="h-6 w-6" />
+          </Link>
+          <Link to="https://www.facebook.com" target="_blank">
+            <LinkedInIcon fill="white" className="h-6 w-6" />
+          </Link>
+          <Link to="https://www.facebook.com" target="_blank">
+            <TwitterIcon fill="white" className="h-6 w-6" />
+          </Link>
         </div>
       </div>
       <div className="flex flex-row justify-between items-center  h-32 px-8 md:px-32 py-8">
-        <div className="border-2 border-violet-300">Logo</div>
+        <Link to='/'>
+          <img src={Logo} alt="UrbanInsta" className="h-12 w-12" />
+        </Link>
         <button
           className="block md:hidden"
           onClick={() => setIsOpen(!isOpen)}
