@@ -15,7 +15,7 @@ export const Header = () => {
   return (
     <div className="relative">
       <div className=' justify-between h-12 px-8 md:px-16 py-2 hidden md:flex '>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 text-white">
           <Link to="https://www.yourwebsite.com" className="flex items-center space-x-2">
             <Mail fill="white" className="h-6 w-6" /> 
             <span className="text-md font-bold">mail</span>
@@ -75,14 +75,14 @@ export const Header = () => {
             >
               <path
                 d="M2 18V2H18"
-                stroke="#7C3AED"
+                stroke="white"
                 strokeWidth="3"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
             </svg>
           </div>
-          <div className="flex flex-row space-x-8 py-4">
+          <div className="flex flex-row space-x-8 py-4 text-white">
             <div className="font-semibold cursor-pointer" onClick={() => navigate('/')}>Home</div>
             <div>Property</div>
             <div>Agent</div>
@@ -92,7 +92,7 @@ export const Header = () => {
         </div>
       </div>
       {isOpen && (
-        <div className="absolute top-32 left-0 w-full bg-white border-t-2 border-violet-300 shadow-lg md:hidden">
+        <div className="absolute top-32 left-0 w-full bg-white border-t-2 border-violet-300 shadow-lg md:hidden text-white">
           <div className="flex flex-col space-y-4 p-4">
             <div className="font-semibold">Home</div>
             <div>Property</div>
