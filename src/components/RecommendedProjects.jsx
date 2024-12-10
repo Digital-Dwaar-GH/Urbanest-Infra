@@ -38,7 +38,7 @@ export const RecommendedProjects = () => {
 
   return (
     <div className="bg-white">
-      <div className="pt-32 pb-12 flex flex-col space-y-4 px-4 lg:px-32 relative">
+      <div className=" pt-56 md:pt-32 pb-12 flex flex-col space-y-4 px-4 lg:px-32 relative">
         <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:justify-between">
           <svg
             width="36"

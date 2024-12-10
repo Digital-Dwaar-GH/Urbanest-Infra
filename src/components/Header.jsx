@@ -74,7 +74,7 @@ export const Header = () => {
             </svg>
           </div>
           <div className="flex flex-row space-x-8 py-4">
-            <div className="font-semibold">Home</div>
+            <div className="font-semibold cursor-pointer" onClick={() => navigate('/')}>Home</div>
             <div>Property</div>
             <div>Agent</div>
             <div className='cursor-pointer' onClick={() => navigate('/Contact')}>Contact</div>
