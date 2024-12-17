@@ -4,13 +4,13 @@ import InstagramIcon from '../assets/svg/instagram'
 import LinkedInIcon from '../assets/svg/linkedin'
 import TwitterIcon from '../assets/svg/twitter'
 import { Link } from 'react-router-dom'
-import Logo from '../assets/Images/Logo UI ICON.png'
+import Logo from '../assets/Images/Logo UI white.png'
 import footleft from '../assets/Images/footer-1.jpg'
 import footcenter from '../assets/Images/footer-2.jpg'
 import footright from '../assets/Images/footer-3.jpg'
 export const Footer = () => {
   return (
-    <div className='py-8 px-16 lg:px-32 flex-col space-y-8 bg-violet-300'>
+    <div className='py-8 px-16 lg:px-32 flex-col space-y-8 bg-whitek-500 text-white'>
      <div className=' bg-white rounded-2xl py-8 flex justify-center items-center'>
         <div className=' flex-col space-y-4 justify-center items-center  text-center'>
           <div className="relative flex justify-center items-center space-x-4">
@@ -30,33 +30,33 @@ export const Footer = () => {
             <div className='font-semibold text-xl'>Still Have Any Question?</div>
             <div className='text-gray-500 text-md'>Can’t find the answer you’re looking for? Please chat to our friendly team.</div>
             <div className="flex justify-center">
-              <Link to="/Contact" className="text-white text-lg bg-violet-500 hover:bg-violet-600 px-6 py-2 rounded-md">
+              <Link to="/Contact" className="text-white text-lg bg-whitek-400 hover:bg-whitek-600 px-6 py-2 rounded-md">
                 Get in Touch
               </Link>
             </div>
         </div>
      </div>
-     <div className=' flex flex-col lg:flex-row'>
+     <div className=' flex flex-col lg:flex-row '>
           <div className='w-full lg:w-1/2 flex-col space-y-2'>
             <div className='flex space-x-2 '>
               <img src={Logo} alt="Logo" className="h-10 w-10" />
               <p>UrbanestInfra</p>
             </div>
-            <div className='text-sm text-gray-600'>
+            <div className='text-sm'>
                 UrbanestInfra is a leading real estate platform dedicated to providing affordable, sustainable, and inclusive housing solutions.
             </div>
             <div className="flex items-center space-x-6">
               <Link to="https://www.facebook.com" target="_blank">
-                <FacebookIcon fill="gray" className="h-6 w-6" />
+                <FacebookIcon fill="#c9c0bf" className="h-6 w-6" />
               </Link>
               <Link to="https://www.facebook.com" target="_blank">
-                <InstagramIcon fill="gray" className="h-6 w-6" />
+                <InstagramIcon fill="#c9c0bf" className="h-6 w-6" />
               </Link>
               <Link to="https://www.facebook.com" target="_blank">
-                <LinkedInIcon fill="gray" className="h-6 w-6" />
+                <LinkedInIcon fill="#c9c0bf" className="h-6 w-6" />
               </Link>
               <Link to="https://www.facebook.com" target="_blank">
-                <TwitterIcon fill="gray" className="h-6 w-6" />
+                <TwitterIcon fill="#c9c0bf" className="h-6 w-6" />
               </Link>
             </div>
           </div>

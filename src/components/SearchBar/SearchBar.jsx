@@ -60,7 +60,7 @@ export const SearchBar = () => {
             </div>
           </div>
           <button
-            className="bg-violet-500 rounded-md p-2 cursor-pointer w-full md:w-14 md:h-14 flex justify-center items-center"
+            className="bg-whitek-500 rounded-md p-2 cursor-pointer w-full md:w-14 md:h-14 flex justify-center items-center"
             onClick={() => triggerSearch(searchQuery, selectedLocation, selectedType, selectedPrice)}
           >
             <img src={SearchIcon} alt="Search" className=' w-8 h-8 md:w-10 md:h-8' />

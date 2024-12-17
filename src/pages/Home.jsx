@@ -12,7 +12,7 @@ import { FAQ } from '../components/FAQ/main'
 export const Home = () => {
   return (
     <>
-        <div className='bg-violet-100'>
+        <div className='bg-whitek-100'>
             <div
               className="relative bg-cover bg-center"
               style={{ backgroundImage: `url(${bannerImage})` }}

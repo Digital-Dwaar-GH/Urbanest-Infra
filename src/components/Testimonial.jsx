@@ -40,22 +40,6 @@ export const Testimonial = () => {
     <div className="bg-white rounded-2xl">
       <div className="flex flex-col space-y-4 p-8 relative ">
         <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:justify-between ">
-          <svg
-            width="36"
-            height="36"
-            viewBox="0 0 36 36"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="absolute top-6 left-2 lg:left-2"
-          >
-            <path
-              d="M2 34V2H34"
-              stroke="#7C3AED"
-              strokeWidth="4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
           <div className="max-w-xl text-3xl md:text-5xl font-semibold">
             They vote on the property services we provide
           </div>
