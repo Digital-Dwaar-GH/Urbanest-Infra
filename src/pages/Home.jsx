@@ -13,7 +13,6 @@ export const Home = () => {
   return (
     <>
         <div className='bg-violet-100'>
-            <TopBanner/>
             <div
               className="relative bg-cover bg-center"
               style={{ backgroundImage: `url(${bannerImage})` }}
