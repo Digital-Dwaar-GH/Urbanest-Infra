@@ -5,16 +5,32 @@ import LinkedInIcon from '../assets/svg/linkedin'
 import TwitterIcon from '../assets/svg/twitter'
 import { Link } from 'react-router-dom'
 import Logo from '../assets/Images/Logo UI ICON.png'
+import footleft from '../assets/Images/footer-1.jpg'
+import footcenter from '../assets/Images/footer-2.jpg'
+import footright from '../assets/Images/footer-3.jpg'
 export const Footer = () => {
   return (
     <div className='py-8 px-16 lg:px-32 flex-col space-y-8 bg-violet-300'>
      <div className=' bg-white rounded-2xl py-8 flex justify-center items-center'>
         <div className=' flex-col space-y-4 justify-center items-center  text-center'>
-            <div>images</div>
+          <div className="relative flex justify-center items-center space-x-4">
+            <div className="flex justify-center items-center rounded-full overflow-hidden border-2">{/* image*/}
+              <img src={footleft} alt="Left" className="h-24 w-24 object-cover" />
+            </div>
+
+            <div className="flex justify-center items-center rounded-full overflow-hidden border-2">
+              <img src={footcenter} alt="Center" className="h-24 w-24 object-cover" />
+            </div>
+
+            <div className="flex justify-center items-center rounded-full overflow-hidden border-2">
+              <img src={footright} alt="Right" className="h-24 w-24 object-cover" />
+            </div>
+          </div>
+
             <div className='font-semibold text-xl'>Still Have Any Question?</div>
             <div className='text-gray-500 text-md'>Can’t find the answer you’re looking for? Please chat to our friendly team.</div>
             <div className="flex justify-center">
-              <Link to="/contact-us" className="text-white text-lg bg-violet-500 hover:bg-violet-600 px-6 py-2 rounded-md">
+              <Link to="/Contact" className="text-white text-lg bg-violet-500 hover:bg-violet-600 px-6 py-2 rounded-md">
                 Get in Touch
               </Link>
             </div>
