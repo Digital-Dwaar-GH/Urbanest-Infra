@@ -8,9 +8,9 @@ export const Header = () => {
 
   return (
     <div className="relative">
-      <div className="flex flex-row justify-between items-center  h-32 px-8 md:px-32 py-8">
+      <div className="flex flex-row justify-between items-center  h-24 px-8 md:px-32 ">
         <Link to='/'>
-          <img src={Logo} alt="UrbanInsta" className="h-12 w-12" />
+          <img src={Logo} alt="UrbanestInfra" className="h-12 w-12" />
         </Link>
         <button
           className="block md:hidden"
@@ -51,12 +51,34 @@ export const Header = () => {
             </svg>
           </div>
           <div className="flex flex-row space-x-8 py-4 text-white">
-            <div className="font-semibold cursor-pointer" onClick={() => navigate('/')}>Home</div>
-            <div>Property</div>
-            <div>Agent</div>
-            <div className='cursor-pointer' onClick={() => navigate('/Contact')}>Contact</div>
-            <div>About</div>
+            <div
+              className="font-semibold cursor-pointer group relative"
+              onClick={() => navigate('/')}
+            >
+              Home
+              <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-white transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0"></span>
+            </div>
+            <div className="cursor-pointer group relative">
+              Property
+              <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-white transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0"></span>
+            </div>
+            <div className="cursor-pointer group relative">
+              Developers
+              <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-white transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0"></span>
+            </div>
+            <div
+              className="cursor-pointer group relative"
+              onClick={() => navigate('/Contact')}
+            >
+              Contact
+              <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-white transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0"></span>
+            </div>
+            <div className="cursor-pointer group relative">
+              About
+              <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-white transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0"></span>
+            </div>
           </div>
+
         </div>
       </div>
       {isOpen && (

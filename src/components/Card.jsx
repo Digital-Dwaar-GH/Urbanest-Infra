@@ -4,7 +4,7 @@ export const Card = ({ title, description, imageUrl}) => {
   return (
     <div className='border p-4 rounded-lg shadow-md'
       >
-      <div className='h-56'>
+      <div className='h-96'>
         <img 
           src={imageUrl} 
           alt={title} 

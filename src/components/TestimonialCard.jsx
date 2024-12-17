@@ -10,7 +10,7 @@ export const TestimonialCard = ({ name, company, description, imageUrl, rating }
     );
   };
   return (
-    <div className="border p-6 rounded-lg shadow-md flex flex-col items-center text-center space-y-4 h-80">
+    <div className="border p-6 rounded-lg shadow-md flex flex-col items-center text-center space-y-4 h-96">
       <div className="w-24 h-24">
         <img 
           src={imageUrl} 

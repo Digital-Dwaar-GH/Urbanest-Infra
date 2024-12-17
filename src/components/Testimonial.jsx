@@ -37,16 +37,16 @@ export const Testimonial = () => {
     };
 
   return (
-    <div className="bg-white">
-      <div className="pt-12 pb-12 flex flex-col space-y-4 px-4 lg:px-32 relative">
-        <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:justify-between">
+    <div className="bg-white rounded-2xl">
+      <div className="flex flex-col space-y-4 p-8 relative ">
+        <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:justify-between ">
           <svg
             width="36"
             height="36"
             viewBox="0 0 36 36"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute top-8 left-2 lg:left-28"
+            className="absolute top-6 left-2 lg:left-2"
           >
             <path
               d="M2 34V2H34"
@@ -60,7 +60,7 @@ export const Testimonial = () => {
             They vote on the property services we provide
           </div>
         </div>
-      <div className="relative">
+        <div className="relative">
             {/* Left Button */}
             <button
               onClick={handlePrev}

@@ -37,8 +37,7 @@ export const RecommendedProjects = () => {
   };
 
   return (
-    <div className="bg-white">
-      <div className=" pt-56 md:pt-32 pb-12 flex flex-col space-y-4 px-4 lg:px-32 relative">
+      <div className="bg-white p-8 flex flex-col space-y-4 px-4 lg:px-8 relative border-4 rounded-2xl ">
         <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:justify-between">
           <svg
             width="36"
@@ -46,7 +45,7 @@ export const RecommendedProjects = () => {
             viewBox="0 0 36 36"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute top-56 sm:top-48 md:top-28 left-2 lg:left-28"
+            className="absolute top-56 sm:top-48 md:top-8 left-2 lg:left-4"
           >
             <path
               d="M2 34V2H34"
@@ -139,6 +138,5 @@ export const RecommendedProjects = () => {
           </button>
         </div>
       </div>
-    </div>
   );
 };
