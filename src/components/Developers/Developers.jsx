@@ -107,7 +107,7 @@ export const Developers = () => {
         </div>
 
         {/* Developer Info (Below Carousel) */}
-        <div className=" flex justify-center space-x-24">
+        <div className=" flex justify-center space-x-4 lg:space-x-24">
           {developers
             .slice(scrollIndex, scrollIndex + 3)
             .map((developer) => (
@@ -115,8 +115,8 @@ export const Developers = () => {
                 key={developer.id}
                 className="flex flex-col space-y-2 justify-center items-center"
               >
-                <h3 className="text-lg font-bold">{developer.name}</h3>
-                <div className="flex space-x-4">
+                <h3 className=" text-sm lg:text-lg font-bold">{developer.name}</h3>
+                <div className="hidden  lg:flex space-x-4">
                   <p className="text-sm text-gray-500">
                     propertiesForSale: {developer.propertiesForSale}
                   </p>

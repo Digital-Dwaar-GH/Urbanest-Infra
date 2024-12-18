@@ -6,7 +6,7 @@ import LocationIcon from '../../../assets/svg/location';
 
 export const Message = () => {
   return (
-    <div className="flex flex-col md:flex-row gap-8 p-8">
+    <div className="flex flex-col lg:flex-row gap-8 p-8">
         <div className="flex-1 flex justify-center items-center  md:pt-8">
             <div className="flex-col space-y-4 bg-gray-50 px-12 py-16 rounded-lg shadow-lg">
                 <h2 className="text-5xl font-semibold text-gray-800">Send us a message</h2>
