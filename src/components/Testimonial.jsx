@@ -48,7 +48,7 @@ export const Testimonial = () => {
             {/* Left Button */}
             <button
               onClick={handlePrev}
-              className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-transparent p-2 text-violet-200 hover:text-violet-500 focus:outline-none z-10 border-2 border-violet-200 rounded-full hover:border-violet-300 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
+              className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-transparent p-2 text-whitek-300 hover:text-whitek-900 focus:outline-none z-10 border-2 border-rblack-200 rounded-full hover:border-whitek-900 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
             >
               <svg
                 width="24"
@@ -96,7 +96,7 @@ export const Testimonial = () => {
             {/* Right Button */}
             <button
               onClick={handleNext}
-              className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-transparent p-2 text-violet-200 hover:text-violet-500 focus:outline-none z-10 border-2 border-violet-200 rounded-full hover:border-violet-300 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
+               className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-transparent p-2 text-whitek-300 hover:text-whitek-900 focus:outline-none z-10 border-2 border-rblack-200 rounded-full hover:border-whitek-900 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
             >
               <svg
                 width="24"

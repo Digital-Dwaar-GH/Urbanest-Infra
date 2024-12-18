@@ -7,7 +7,7 @@ import LocationIcon from '../../../assets/svg/location';
 export const Message = () => {
   return (
     <div className="flex flex-col md:flex-row gap-8 p-8">
-        <div className="flex-1 flex justify-center items-center  md:pt-32">
+        <div className="flex-1 flex justify-center items-center  md:pt-8">
             <div className="flex-col space-y-4 bg-gray-50 px-12 py-16 rounded-lg shadow-lg">
                 <h2 className="text-5xl font-semibold text-gray-800">Send us a message</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
@@ -21,7 +21,7 @@ export const Message = () => {
                             type="text"
                             id="name"
                             placeholder="Enter your name"
-                            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-whitek-500"
                         />
                         </div>
                         <div>
@@ -32,7 +32,7 @@ export const Message = () => {
                             type="text"
                             id="phone"
                             placeholder="Enter your phone number"
-                            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-whitek-500"
                         />
                         </div>
                         <div>
@@ -43,7 +43,7 @@ export const Message = () => {
                             type="email"
                             id="email"
                             placeholder="Enter your email"
-                            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-whitek-500"
                         />
                         </div>
                         <div>
@@ -54,7 +54,7 @@ export const Message = () => {
                             type="text"
                             id="subject"
                             placeholder="Enter the subject"
-                            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-whitek-500"
                         />
                         </div>
                     </div>
@@ -66,13 +66,13 @@ export const Message = () => {
                         id="message"
                         rows="5"
                         placeholder="Type your message here"
-                        className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-whitek-500"
                         ></textarea>
                     </div>
                     <div className="mt-6">
                         <button
                         type="submit"
-                        className="w-full bg-violet-500 text-white py-3 rounded-md hover:bg-violet-600 focus:outline-none"
+                        className="w-full  text-white py-3 rounded-md bg-whitek-600 hover:bg-whitek-900  focus:outline-none"
                         >
                         SEND MESSAGE
                         </button>
@@ -80,9 +80,9 @@ export const Message = () => {
                 </form>
             </div>
         </div>
-      <div className="flex-1 flex justify-center items-center ">
+      <div className="flex-1 flex justify-center items-center shadow-xl rounded-2xl">
         <div className=" flex-col space-y-4 p-6  max-w-4xl">
-            <h2 className="text-violet-500 font-semibold">GET IN TOUCH</h2>
+            <h2 className="text-whitek-500 font-semibold">GET IN TOUCH</h2>
             <h1 className="text-5xl font-semibold text-gray-800">
                 Feel free to reach out for additional property details and insights.
             </h1>

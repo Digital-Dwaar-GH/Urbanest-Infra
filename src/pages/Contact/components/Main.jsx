@@ -3,7 +3,7 @@ import contact from '../../../assets/Images/contact-main.jpg'
 
 export const Main = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center md:justify-between ">
+    <div className="flex flex-col md:flex-row md:my-20 items-center md:justify-between shadow-xl rounded-2xl overflow-hidden">
         <div className="flex-1 flex items-center justify-center">
             <div className="text-center md:text-left text-gray-800 p-8 max-w-xl">
                 <h1 className="text-5xl font-bold mb-4">Contact Us</h1>
@@ -12,11 +12,11 @@ export const Main = () => {
                 </p>
             </div>
         </div>
-        <div className="flex-1 flex justify-center ">
+        <div className="flex-1 flex justify-center">
             <img
                 src={contact}
                 alt="Placeholder"
-                className="max-w-full h-auto rounded-lg shadow-lg"
+                className="max-w-full h-auto shadow-lg"
             />
         </div>
     </div>

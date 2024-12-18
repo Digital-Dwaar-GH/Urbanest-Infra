@@ -1,19 +1,18 @@
 import React, { useEffect } from 'react'
-import { Header } from '../../components/Header'
-import { Footer } from '../../components/Footer'
 import { Main } from './components/Main'
 import { Message } from './components/Message'
+import { Layout } from '../../components/Layout/Layout';
 
 export const Contact = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div className='bg-violet-100'>
-      <Header />
-      <Main/>
-      <Message/>
-      <Footer/>
-    </div>
+    <Layout>
+      <div className='mx-20 md:mx-36'>
+        <Main/>
+        <Message/>
+      </div>
+    </Layout>
   )
 }

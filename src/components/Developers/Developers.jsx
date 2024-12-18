@@ -31,7 +31,7 @@ export const Developers = () => {
           {/* Left Button */}
           <button
             onClick={handlePrev}
-            className="bg-transparent p-2 text-violet-200 hover:text-violet-500 focus:outline-none z-10 border-2 border-violet-200 rounded-full hover:border-violet-300 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
+            className="bg-transparent p-2 text-whitek-500 hover:text-whitek-900 focus:outline-none z-10 border-2 border-rblack-200 rounded-full hover:border-rblack-500 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
           >
             <svg
               width="24"
@@ -60,12 +60,17 @@ export const Developers = () => {
               }}
             >
               {developers.map((developer, index) => (
-                <div key={developer.id}  className={`flex-shrink-0 text-center transition-all duration-300 ${
-                    index === scrollIndex + 1 ? 'opacity-100 scale-100' : 'opacity-50 scale-90'
+                <div
+                  key={developer.id}
+                  className={`flex-shrink-0 text-center transition-all duration-300 ${
+                    index >= scrollIndex && index < scrollIndex + 3
+                      ? 'opacity-100 scale-100'
+                      : 'opacity-50 scale-90'
                   }`}
                   style={{
                     width: `calc(${100 / 3}% - 16px)`,
-                  }}>
+                  }}
+                >
                   <div>
                     <img
                       src={developer.imageUrl}
@@ -81,7 +86,7 @@ export const Developers = () => {
           {/* Right Button */}
           <button
             onClick={handleNext}
-            className="bg-transparent p-2 text-violet-200 hover:text-violet-500 focus:outline-none z-10 border-2 border-violet-200 rounded-full hover:border-violet-300 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
+            className="bg-transparent p-2 text-whitek-500 hover:text-whitek-900 focus:outline-none z-10 border-2 border-rblack-200 rounded-full hover:border-rblack-500 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
           >
             <svg
               width="24"
@@ -102,18 +107,25 @@ export const Developers = () => {
         </div>
 
         {/* Developer Info (Below Carousel) */}
-        <div className="mt-6 space-y-4">
-          {developers.map((developer, index) => (
-            index === scrollIndex+1 && (
-              <div key={developer.id} className="flex flex-col space-y-2 justify-center items-center">
-                <h3 className="text-lg font-bold">{developer.id}</h3>
-                <div className='flex space-x-4'>
-                  <p className="text-sm text-gray-500">propertiesForSale: {developer.propertiesForSale}</p>
-                  <p className="text-sm">propertiesForRent: {developer.propertiesForRent}</p>
+        <div className=" flex justify-center space-x-24">
+          {developers
+            .slice(scrollIndex, scrollIndex + 3)
+            .map((developer) => (
+              <div
+                key={developer.id}
+                className="flex flex-col space-y-2 justify-center items-center"
+              >
+                <h3 className="text-lg font-bold">{developer.name}</h3>
+                <div className="flex space-x-4">
+                  <p className="text-sm text-gray-500">
+                    propertiesForSale: {developer.propertiesForSale}
+                  </p>
+                  <p className="text-sm">
+                    propertiesForRent: {developer.propertiesForRent}
+                  </p>
                 </div>
               </div>
-            )
-          ))}
+            ))}
         </div>
       </div>
     </div>
