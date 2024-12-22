@@ -7,6 +7,7 @@ import { TopBanner } from '../components/TopBanner'
 import { Developers } from '../components/Developers/Developers'
 import { FAQ } from '../components/FAQ/main'
 import { Layout } from '../components/Layout/Layout'
+import { OurTeams } from '../components/OurTeams'
 export const Home = () => {
   return (
     <>
@@ -17,6 +18,7 @@ export const Home = () => {
               <AboutUs/>
               <Testimonial/>
               <Developers/>
+              <OurTeams/>
               <FAQ/>
             </div>
         </Layout>
